@@ -1,8 +1,0 @@
-[
-{
-  "directory": "/Users/weiziyue/Desktop/coding/OpenGL/build",
-  "command": "/usr/bin/clang++  -I/opt/homebrew/include -I/opt/homebrew/Cellar/glad/include -g -std=gnu++11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/OpenGL_App.dir/src/main.cpp.o -c /Users/weiziyue/Desktop/coding/OpenGL/src/main.cpp",
-  "file": "/Users/weiziyue/Desktop/coding/OpenGL/src/main.cpp",
-  "output": "CMakeFiles/OpenGL_App.dir/src/main.cpp.o"
-}
-]

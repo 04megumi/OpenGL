@@ -1,1 +1,0 @@
-/usr/bin/clang++ -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/OpenGL_App.dir/src/main.cpp.o -o OpenGL_App  /opt/homebrew/lib/libglfw.dylib /opt/homebrew/Cellar/glad/lib/libglad.a -framework OpenGL

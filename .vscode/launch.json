@@ -1,18 +1,18 @@
 // launch.json 示例
 {
-    "version": "0.2.0",
-    "configurations": [
-      {
-        "name": "(lldb) Launch",
-        "type": "cppdbg",
-        "request": "launch",
-        "program": "${workspaceFolder}/build/OpenGL_App",
-        "args": [],
-        "stopAtEntry": false,
-        "cwd": "${workspaceFolder}",
-        "externalConsole": true,
-        "preLaunchTask": "CMake: Build",
-        "MIMode": "lldb"
-      }
-    ]
-  }
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "(lldb) Launch",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/OpenGL_App",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "externalConsole": true,
+      "preLaunchTask": "CMake: Build",
+      "MIMode": "lldb"
+    }
+  ]
+}
