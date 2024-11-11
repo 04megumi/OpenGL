@@ -1,0 +1,26 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "(lldb) Launch",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/OpenGL_App",  // 替换为你的可执行文件路径
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}/build",  // 设置为 build 文件夹
+      "environment": [],
+      "externalConsole": true,
+      "MIMode": "lldb",
+      "miDebuggerPath": "/usr/bin/lldb",
+      "preLaunchTask": "CMake: Build",  // 这里会先运行 CMake: Build 任务
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for lldb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}

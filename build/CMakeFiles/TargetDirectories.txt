@@ -1,0 +1,3 @@
+/Users/weiziyue/Desktop/coding/OpenGL/build/CMakeFiles/OpenGL_App.dir
+/Users/weiziyue/Desktop/coding/OpenGL/build/CMakeFiles/edit_cache.dir
+/Users/weiziyue/Desktop/coding/OpenGL/build/CMakeFiles/rebuild_cache.dir
