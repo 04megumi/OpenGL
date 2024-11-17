@@ -45,8 +45,8 @@ Shader::Shader(const char *vertexPath, const char *fragmentPath)
     // 编译片段着色器代码并错误检查
     fragment = glCreateShader(GL_FRAGMENT_SHADER);
     glShaderSource(fragment, 1, &fShaderCode, NULL);
-    glCompileShader(vertex);
-    checkCompileErrors(fragment, "FRAGMENT")
+    glCompileShader(fragment);
+    checkCompileErrors(fragment, "FRAGMENT");
     // 创建程序， 将着色器连接到程序上并错误检查
     ID = glCreateProgram();
     glAttachShader(ID, vertex); //把着色器连接到程序上
@@ -60,7 +60,7 @@ Shader::Shader(const char *vertexPath, const char *fragmentPath)
 
 void Shader::use()
 {
-    glUserProgram(ID);
+    glUseProgram(ID);
 }
 
 void Shader::setBool(const std::string &name, bool value) const
@@ -82,18 +82,23 @@ void Shader::checkCompileErrors(unsigned int shader, std::string type)
 {
     int success;
     char infoLog[1024];
-    if (type != "PROGRAM");
+    if (type != "PROGRAM")
     {
-        glGetShaderiv(shader, GL_COMPILESTATUS, &success);
-        std::cout << "ERROR::SHADER_COMPILATION_ERROR of type: " << type << "\n"
-            << infoLog << "\n -- --------------------" << std::endl;
+        glGetShaderiv(shader, GL_COMPILE_STATUS, &success);
+        if(!success)
+        {
+            glGetShaderInfoLog(shader, 1024, NULL, infoLog);
+            std::cout << "ERROR::SHADER_COMPILATION_ERROR of type: " << type << "\n"
+                      << infoLog << "\n --------------------------" << std::endl;
+        }
+        
     } else {
         glGetProgramiv(shader, GL_LINK_STATUS, &success);
         if (!success)
         {
             glGetProgramInfoLog(shader, 1024, NULL, infoLog);
             std::cout << "ERROR::PROGRAM_LINKING_ERROR of type: " << type << "\n"
-            << infoLog << "\n -- --------------------" << std::endl;
+                      << infoLog << "\n -- --------------------" << std::endl;
         }
     }
 }

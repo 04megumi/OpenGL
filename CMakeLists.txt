@@ -13,6 +13,7 @@ include_directories(
 
 # 创建可执行文件
 add_executable(OpenGL_App src/main.cpp src/Shader.cpp )
+# add_executable(OpenGL_App src/test.cpp)
 
 # 手动链接 GLFW 和 GLAD 库
 target_link_libraries(OpenGL_App
