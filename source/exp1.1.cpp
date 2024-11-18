@@ -1,9 +1,21 @@
+/*
+    实验内容： 绘制三角形
+*/
+
+
+
+
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include "Shader.h"
 
+
+Shader ourShader;
+
+
 int main()
 {
+
 
     // GLFW初始化 (3.3版本, 核心模式OpenGL)
     glfwInit();
@@ -11,8 +23,9 @@ int main()
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
+
     // 创建窗口
-    GLFWwindow* window = glfwCreateWindow(800, 600, "DwawCube", NULL, NULL);
+    GLFWwindow* window = glfwCreateWindow(800, 600, "exp1.1", NULL, NULL);
     if (window == NULL)
     {
         std::cout << "Failed" << std::endl;
@@ -20,6 +33,7 @@ int main()
         return -1;
     }
     glfwMakeContextCurrent(window);
+
 
     // 使用glad导入glfw函数地址
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
@@ -29,15 +43,18 @@ int main()
         return -1;
     }
 
-    Shader ourShader("vectorShader.txt", "fragmentShader.txt");
+
+    ourShader = Shader("shader/vectorShader(t).txt", "shader/fragmentShader.txt");
+
 
     // 定义顶点，每行一个，前三个是坐标，后三个是rgb
     float vertices[] = 
     {
         0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 0.0f,
         -0.5f, -0.5f, 0.0f, 0.0f, 1.0f, 0.0f,
-        0.0f, 0.5f, 0.0f, 0.0f, 1.0f, 1.0f,
+        0.0f, 0.5f, 0.0f, 0.0f, 0.0f, 1.0f,
     };
+
 
     unsigned int VBO, VAO; //Vertex Array（Buffer） Object，
     glGenVertexArrays(1, &VAO); //给VAO分配内存
@@ -50,7 +67,9 @@ int main()
     glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6*sizeof(float), (void*)(3*sizeof(float)));
     glEnableVertexAttribArray(1);
 
+
     ourShader.use();
+
 
     // 渲染循环
     while (!glfwWindowShouldClose(window))
@@ -64,7 +83,9 @@ int main()
         glfwPollEvents(); //检查有没有触发事件
     }
 
+
     glfwTerminate();
+
 
     return 0;
 }

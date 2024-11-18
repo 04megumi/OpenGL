@@ -6,6 +6,7 @@
                 "/opt/homebrew/include",
                 "/opt/homebrew/Cellar/glad/include",
                 "/opt/homebrew/include/GLFW", 
+                "/opt/homebrew/Cellar/glm",
                 "${workspaceFolder}/**"
             ],
             "defines": [],

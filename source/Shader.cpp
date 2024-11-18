@@ -1,5 +1,10 @@
 #include "Shader.h"
 
+Shader::Shader()
+{
+    
+}
+
 Shader::Shader(const char *vertexPath, const char *fragmentPath)
 {
     //1. 读取着色器代码
@@ -55,7 +60,7 @@ Shader::Shader(const char *vertexPath, const char *fragmentPath)
     checkCompileErrors(ID, "PROGRAM");
    // 释放顶点和片段着色器
    glDeleteShader(vertex);
-   glDeleteShader(vertex);
+   glDeleteShader(fragment);
 }
 
 void Shader::use()
@@ -76,6 +81,11 @@ void Shader::setInt(const std::string &name, int value) const
 void Shader::setFloat(const std::string &name, float value) const
 {
     glUniform1i(glGetUniformLocation(ID, name.c_str()), value);
+}
+
+void Shader::setMat4(const std::string &name, glm::mat4 value) const
+{
+    glUniformMatrix4fv(glGetUniformLocation(ID, name.c_str()), 1, GL_FALSE, glm::value_ptr(value));
 }
 
 void Shader::checkCompileErrors(unsigned int shader, std::string type)
