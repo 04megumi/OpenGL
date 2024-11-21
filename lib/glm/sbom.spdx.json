@@ -1,0 +1,95 @@
+{
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "spdxVersion": "SPDX-2.3",
+  "name": "SBOM-SPDX-glm-1.0.1",
+  "creationInfo": {
+    "created": "2024-11-17T14:07:37Z",
+    "creators": [
+      "Tool: https://github.com/Homebrew/brew@4.4.5"
+    ]
+  },
+  "dataLicense": "CC0-1.0",
+  "documentNamespace": "https://formulae.brew.sh/spdx/glm-1.0.1.json",
+  "documentDescribes": [
+    "SPDXRef-Archive-glm-src",
+    "SPDXRef-Compiler",
+    "SPDXRef-Bottle-glm"
+  ],
+  "files": [
+
+  ],
+  "packages": [
+    {
+      "SPDXID": "SPDXRef-Archive-glm-src",
+      "name": "glm",
+      "versionInfo": "1.0.1",
+      "filesAnalyzed": false,
+      "licenseDeclared": "NOASSERTION",
+      "builtDate": "1970-01-01 00:00:00 UTC",
+      "licenseConcluded": "MIT",
+      "downloadLocation": "https://github.com/g-truc/glm/archive/refs/tags/1.0.1.tar.gz",
+      "copyrightText": "NOASSERTION",
+      "externalRefs": [
+
+      ],
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "9f3174561fd26904b23f0db5e560971cbf9b3cbda0b280f04d5c379d03bf234c"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Compiler",
+      "name": "clang",
+      "versionInfo": "16.0",
+      "filesAnalyzed": false,
+      "licenseDeclared": "NOASSERTION",
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "checksums": [
+
+      ],
+      "externalRefs": [
+
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Bottle-glm",
+      "name": "glm",
+      "versionInfo": "1.0.1",
+      "filesAnalyzed": false,
+      "licenseDeclared": "NOASSERTION",
+      "builtDate": "1970-01-01 00:00:00 UTC",
+      "licenseConcluded": "MIT",
+      "downloadLocation": "https://mirrors.ustc.edu.cn/homebrew-bottles/glm-1.0.1.arm64_sequoia.bottle.tar.gz",
+      "copyrightText": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:brew/homebrew/core/glm@1.0.1",
+          "referenceType": "purl"
+        }
+      ],
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "6609c947e9ae4ec7c62ddd7ad0d2d64b65283675b57e6f5ab9a19194a607170a"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "spdxElementId": "SPDXRef-File-glm",
+      "relationshipType": "PACKAGE_OF",
+      "relatedSpdxElement": "SPDXRef-Archive-glm-src"
+    },
+    {
+      "spdxElementId": "SPDXRef-Compiler",
+      "relationshipType": "BUILD_TOOL_OF",
+      "relatedSpdxElement": "SPDXRef-Package-glm-src"
+    }
+  ]
+}

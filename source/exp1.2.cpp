@@ -26,7 +26,7 @@ int main()
 
 
     // 创建窗口
-    GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT "exp1.2", NULL, NULL);
+    GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "exp1.2", NULL, NULL);
     if (window == NULL)
     {
         std::cout << "Failed" << std::endl;

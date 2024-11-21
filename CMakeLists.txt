@@ -5,23 +5,30 @@ project(OpenGL_Project)
 # 设置 C++ 标准
 set(CMAKE_CXX_STANDARD 11)
 
-# 添加 GLFW 和 GLAD 的头文件路径
+# 包含 GLFW 子目录
+add_subdirectory(lib/glfw)
+
+# 添加头文件路径
 include_directories(
-    /opt/homebrew/include           # GLFW 头文件路径
-    /opt/homebrew/Cellar/glad/include # GLAD 头文件路径
-    /opt/homebrew/Cellar/glm # glm 头文件
+    ${CMAKE_SOURCE_DIR}/lib/glfw/include
+    ${CMAKE_SOURCE_DIR}/lib/glad/include
+    ${CMAKE_SOURCE_DIR}/lib/glm/include
     ${CMAKE_SOURCE_DIR}/head
 )
 
-# 创建可执行文件
-add_executable(OpenGL_App source/exp1.3.cpp source/Shader.cpp )
+# 查找线程库
+find_package(Threads REQUIRED)
 
-# 手动链接 GLFW 和 GLAD 库
-target_link_libraries(OpenGL_App
-    /opt/homebrew/lib/libglfw.dylib  # GLFW 动态库
-    /opt/homebrew/Cellar/glad/lib/libglad.a  # GLAD 静态库
-    /opt/homebrew/Cellar/glm/1.0.1/lib/libglm.dylib # glm动态库
+# 创建可执行文件
+add_executable(OpenGL_App 
+    source/exp1.3.cpp 
+    source/Shader.cpp 
+    lib/glad/src/glad.c  # GLAD 的源文件
 )
 
-# 链接 OpenGL 框架
-target_link_libraries(OpenGL_App "-framework OpenGL")
+# 链接库和框架
+target_link_libraries(OpenGL_App PRIVATE 
+    glfw               # GLFW
+    Threads::Threads   # 线程库
+    "-framework OpenGL" # OpenGL 框架
+)
