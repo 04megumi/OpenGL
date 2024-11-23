@@ -6,6 +6,7 @@
                 "lib/glfw/include",
                 "lib/glad/include",
                 "lib/glm/include",
+                "lib/assimp/include",
                 "${workspaceFolder}/**"
             ],
             "defines": [],

@@ -1,0 +1,44 @@
+{
+  "homebrew_version": "4.4.6",
+  "used_options": [
+
+  ],
+  "unused_options": [
+
+  ],
+  "built_as_bottle": true,
+  "poured_from_bottle": true,
+  "loaded_from_api": true,
+  "installed_as_dependency": false,
+  "installed_on_request": true,
+  "changed_files": null,
+  "time": 1732284274,
+  "source_modified_time": 0,
+  "compiler": "clang",
+  "aliases": [
+
+  ],
+  "runtime_dependencies": [
+
+  ],
+  "source": {
+    "path": "/Users/weiziyue/Library/Caches/Homebrew/api/formula.jws.json",
+    "tap": "homebrew/core",
+    "tap_git_head": null,
+    "spec": "stable",
+    "versions": {
+      "stable": "5.4.3",
+      "head": null,
+      "version_scheme": 0
+    }
+  },
+  "arch": "arm64",
+  "built_on": {
+    "os": "Macintosh",
+    "os_version": "macOS 15",
+    "cpu_family": "arm_donan",
+    "xcode": "16.0",
+    "clt": "16.1.0.0.1.1729049160",
+    "preferred_perl": "5.34"
+  }
+}

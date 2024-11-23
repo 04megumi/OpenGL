@@ -13,6 +13,7 @@ include_directories(
     ${CMAKE_SOURCE_DIR}/lib/glfw/include
     ${CMAKE_SOURCE_DIR}/lib/glad/include
     ${CMAKE_SOURCE_DIR}/lib/glm/include
+    ${CMAKE_SOURCE_DIR}/lib/assimp/include
     ${CMAKE_SOURCE_DIR}/head
 )
 
@@ -21,14 +22,16 @@ find_package(Threads REQUIRED)
 
 # 创建可执行文件
 add_executable(OpenGL_App 
-    source/exp1.3.cpp 
+    source/exp1.6.cpp 
     source/Shader.cpp 
-    lib/glad/src/glad.c  # GLAD 的源文件
+    source/Model.cpp
+    lib/glad/src/glad.c 
 )
 
 # 链接库和框架
 target_link_libraries(OpenGL_App PRIVATE 
     glfw               # GLFW
     Threads::Threads   # 线程库
+    ${CMAKE_SOURCE_DIR}/lib/assimp/lib/libassimp.dylib
     "-framework OpenGL" # OpenGL 框架
 )
