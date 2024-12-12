@@ -16,6 +16,7 @@
 
 ## 项目构成
 
+```
 ProjectRoot/
 │
 ├── head/                       # 头文件目录
@@ -56,6 +57,7 @@ ProjectRoot/
 ├── test.cpp                    # 分形图形入口文件
 ├── CMakeLists.txt              # CMake构建的配置文件
 └── README.md                   # 项目说明文档
+```
 
 
 
